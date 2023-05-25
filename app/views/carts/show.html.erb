@@ -4,6 +4,8 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if cart.length != 0 %>
+
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -22,7 +24,7 @@
       <tfoot>
         <tr>
           <th colspan="4">
-            TOTAL:
+            TOTALs:
           </th>
           <th>
             <%= cart_subtotal_cents / 100.0 %>
@@ -47,6 +49,10 @@
         </script>
       <% end %>
     </div>
+  
   </div>
-
+  <% else %>
+        <p>YOUR CART IS EMPTY! Please select products before proceeding. Thank you. </p>
+        <%= link_to "PRODCTS PAGE", root_url, class: 'btn btn-info' %>
+    <% end %>
 </section>
