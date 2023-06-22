@@ -14,7 +14,7 @@ CypressRails.hooks.before_server_start do
     quantity: 0,
     price: 64.99
   })
-
+ 
   cat1.products.create!({
     name:  'Scented Blade',
     description: "
@@ -22,8 +22,10 @@ CypressRails.hooks.before_server_start do
     image: open_asset('plante_2.jpg'),
     quantity: 18,
     price: 24.99
-  })
+  }) 
 end
+
+
 
 CypressRails.hooks.after_transaction_start do
   # Called after the transaction is started (at launch and after each reset)
